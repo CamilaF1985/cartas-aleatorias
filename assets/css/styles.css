@@ -1,0 +1,70 @@
+/* Estilos para el body */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: green;
+}
+
+/* Estilos para el contenedor de la carta */
+.carta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilos para la clase .carta */
+.carta {
+    width: 150px;
+    height: 250px;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Estilos para la clase .numero */
+.numero {
+    font-size: 48px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Estilos para la clase .simbolo */
+.simbolo {
+    font-size: 48px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+/* Estilos para la clase .simbolo-rotado */
+.simbolo-rotado {
+    font-size: 48px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    transform: rotate(180deg);
+}
+
+/* Estilos para la clase .dimension-inputs */
+.dimension-inputs{
+    margin-top: 50px;
+}
+
+/* Estilos para el elemento #nueva-carta */
+#nueva-carta{
+    margin-top: 50px;
+}
+

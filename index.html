@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas aleatorias</title>
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+</head>
+
+<body>
+        <!-- Div para la carta -->
+    <div class="carta-container">
+        <div class="carta">
+            <div class="numero"></div>
+            <div class="simbolo"></div>
+            <div class="simbolo-rotado"></div>
+        </div>
+        <button id="nueva-carta">Nueva Carta</button>
+    </div>
+
+        <!-- Div para las dimensiones -->
+    <div class="dimension-inputs">
+        <label for="ancho-cm">Ancho (cm):</label>
+        <input type="number" id="ancho-cm" placeholder="Ancho (en cm)">
+        <label for="alto-cm">Alto (cm):</label>
+        <input type="number" id="alto-cm" placeholder="Alto (en cm)">
+        <button id="aplicar-dimensiones-cm">Aplicar Dimensiones (cm)</button>
+    </div>
+    
+    <!-- Script -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
