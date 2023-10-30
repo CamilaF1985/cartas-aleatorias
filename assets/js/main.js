@@ -62,19 +62,19 @@ function mostrarNuevaCartaAutomaticamente() {
     mostrarCarta();
 }
 
-// Inicializa el temporizador para mostrar una nueva carta automáticamente
-let intervalo;
-
 // Función que inicia el temporizador
 function iniciarIntervalo() {
-    intervalo = setInterval(mostrarNuevaCartaAutomaticamente, 10000);
+    let intervalo = setInterval(mostrarNuevaCartaAutomaticamente, 10000);
+
+    // Detiene el temporizador si se hace clic en el botón "Nueva Carta" y luego lo reinicia
+    botonNuevaCarta.addEventListener('click', () => {
+        clearInterval(intervalo);
+        mostrarCarta();
+        iniciarIntervalo();
+    });
 }
 
-iniciarIntervalo(); 
-
-// Detiene el temporizador si se hace clic en el botón "Nueva Carta" y luego lo reinicia
-botonNuevaCarta.addEventListener('click', () => (clearInterval(intervalo), mostrarCarta(), iniciarIntervalo()));
-
+iniciarIntervalo();
 
 
 
