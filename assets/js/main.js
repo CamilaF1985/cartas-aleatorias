@@ -12,25 +12,21 @@ function obtenerCartaAleatoria() {
 // Función para mostrar una carta en el DOM
 function mostrarCarta() {
     const carta = obtenerCartaAleatoria();
-    const numeroElement = document.querySelector('.numero');
-    const simboloElement = document.querySelector('.simbolo');
-    const simboloRotadoElement = document.querySelector('.simbolo-rotado');
+    const cartaElement = document.querySelector('.carta');
+    const numeroElement = cartaElement.querySelector('.numero');
+    const simboloElement = cartaElement.querySelector('.simbolo');
+    const simboloRotadoElement = cartaElement.querySelector('.simbolo-rotado');
 
     numeroElement.textContent = carta.valor;
+    simboloElement.textContent = carta.palo;
+    simboloRotadoElement.textContent = carta.palo;
 
     // Cambiar el color a rojo solo cuando el palo sea corazón o diamante
     if (carta.palo === '♥' || carta.palo === '♦') {
-        simboloElement.style.color = 'red';
-        simboloRotadoElement.style.color = 'red';
-        numeroElement.style.color = 'red';
+        cartaElement.classList.add('rojo');
     } else {
-        simboloElement.style.color = 'black';
-        simboloRotadoElement.style.color = 'black';
-        numeroElement.style.color = 'black';
+        cartaElement.classList.remove('rojo');
     }
-
-    simboloElement.textContent = carta.palo;
-    simboloRotadoElement.textContent = carta.palo;
 }
 
 const botonNuevaCarta = document.getElementById('nueva-carta');
@@ -67,14 +63,18 @@ function mostrarNuevaCartaAutomaticamente() {
 }
 
 // Inicializa el temporizador para mostrar una nueva carta automáticamente
-let intervalo = setInterval(mostrarNuevaCartaAutomaticamente, 10000);
+let intervalo;
+
+// Función que inicia el temporizador
+function iniciarIntervalo() {
+    intervalo = setInterval(mostrarNuevaCartaAutomaticamente, 10000);
+}
+
+iniciarIntervalo(); 
 
 // Detiene el temporizador si se hace clic en el botón "Nueva Carta" y luego lo reinicia
-botonNuevaCarta.addEventListener('click', () => {
-    clearInterval(intervalo); // Detiene el temporizador actual
-    mostrarCarta(); // Muestra una nueva carta inmediatamente
-    intervalo = setInterval(mostrarNuevaCartaAutomaticamente, 10000); // Reinicia el temporizador
-});
+botonNuevaCarta.addEventListener('click', () => (clearInterval(intervalo), mostrarCarta(), iniciarIntervalo()));
+
 
 
 

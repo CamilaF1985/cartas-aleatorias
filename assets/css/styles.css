@@ -32,13 +32,15 @@ body {
     position: relative;
 }
 
+/* Cambiar el color de todos los hijos de la clase 'carta' cuando tiene la clase 'rojo' */
+.carta.rojo {
+    color: red; 
+}
+
 /* Estilos para la clase .numero */
 .numero {
     font-size: 48px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
 }
 
 /* Estilos para la clase .simbolo */
